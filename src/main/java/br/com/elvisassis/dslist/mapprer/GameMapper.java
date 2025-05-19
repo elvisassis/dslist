@@ -1,0 +1,1 @@
+package br.com.elvisassis.dslist.mapprer;import br.com.elvisassis.dslist.dto.GameMinDTO;import br.com.elvisassis.dslist.entities.Game;import org.mapstruct.Mapper;import org.mapstruct.factory.Mappers;@Mapperpublic interface GameMapper {    GameMapper INSTANCE = Mappers.getMapper(GameMapper.class);    GameMinDTO toDTO(Game entity);    Game toEntity(GameMinDTO dto);}

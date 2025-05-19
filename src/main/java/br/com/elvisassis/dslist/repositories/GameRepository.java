@@ -1,0 +1,1 @@
+package br.com.elvisassis.dslist.repositories;import br.com.elvisassis.dslist.entities.Game;import org.springframework.data.jpa.repository.JpaRepository;public interface GameRepository extends JpaRepository<Game, Long> {}

@@ -28,6 +28,7 @@
 	</scm>
 	<properties>
 		<java.version>21</java.version>
+		<map-struct.version>1.6.3</map-struct.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -53,6 +54,18 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct</artifactId>
+			<version>${map-struct.version}</version> <!-- Verifique a versão mais recente -->
+		</dependency>
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct-processor</artifactId>
+			<version>${map-struct.version}</version>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 
