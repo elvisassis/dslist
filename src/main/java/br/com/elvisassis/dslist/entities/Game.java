@@ -3,8 +3,10 @@ package br.com.elvisassis.dslist.entities;
 import br.com.elvisassis.dslist.dto.GameDTO;
 import br.com.elvisassis.dslist.dto.GameMinDTO;
 import br.com.elvisassis.dslist.mapprer.GameMapper;
+import br.com.elvisassis.dslist.projections.GameMinProjection;
 import jakarta.persistence.*;
 
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -48,7 +50,6 @@ public class Game {
     public GameDTO toFullDTO(Game game) {
         return GameMapper.INSTANCE.toDTO(this);
     }
-    
 
     public Game(Long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl, String shortDescription, String longDescription) {
         this.id = id;

@@ -4,6 +4,8 @@ import br.com.elvisassis.dslist.dto.GameDTO;
 import br.com.elvisassis.dslist.dto.GameMinDTO;
 import br.com.elvisassis.dslist.entities.Game;
 import br.com.elvisassis.dslist.execption.RecordNotFoundException;
+import br.com.elvisassis.dslist.mapprer.GameMapper;
+import br.com.elvisassis.dslist.projections.GameMinProjection;
 import br.com.elvisassis.dslist.repositories.GameRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,6 +22,18 @@ public class GameService {
     }
 
     @Transactional(readOnly = true)
+    public GameDTO findById(Long id) {
+        var result = repository.findById(id).orElseThrow(()-> new RecordNotFoundException());
+        return result.toFullDTO(result);
+    }
+
+    @Transactional(readOnly = true)
+    public List<GameMinDTO> findByList(Long listId) {
+        List<GameMinProjection> result = repository.searchByList(listId);
+        return GameMapper.INSTANCE.toMinDTOProjection(result);
+    }
+
+    @Transactional(readOnly = true)
     public List<GameMinDTO> findAll() {
         List<Game> result = repository.findAll();
         return result.stream()
@@ -27,9 +41,4 @@ public class GameService {
                 .toList();
     }
 
-    @Transactional(readOnly = true)
-    public GameDTO findById(Long id) {
-        var result = repository.findById(id).orElseThrow(()-> new RecordNotFoundException());
-        return result.toFullDTO(result);
-    }
 }
