@@ -1,4 +1,4 @@
-package br.com.elvisassis.dslist.mapprer;
+package br.com.elvisassis.dslist.mapprers;
 
 import br.com.elvisassis.dslist.dto.GameDTO;
 import br.com.elvisassis.dslist.dto.GameMinDTO;

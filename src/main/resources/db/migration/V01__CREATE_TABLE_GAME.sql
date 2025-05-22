@@ -1,0 +1,1 @@
+CREATE TABLE tb_game (    id SERIAL PRIMARY KEY,    title VARCHAR(255),    game_year INTEGER,    genre VARCHAR(255),    platforms VARCHAR(255),    score DOUBLE PRECISION,    img_url VARCHAR(255),    short_description TEXT,    long_description TEXT);

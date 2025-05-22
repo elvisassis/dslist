@@ -1,0 +1,1 @@
+package br.com.elvisassis.dslist.execptions;public class RecordNotFoundException extends RuntimeException {    public RecordNotFoundException() {        super("Record not found! Check the ID");    }}

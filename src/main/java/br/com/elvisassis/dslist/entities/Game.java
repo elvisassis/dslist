@@ -2,11 +2,9 @@ package br.com.elvisassis.dslist.entities;
 
 import br.com.elvisassis.dslist.dto.GameDTO;
 import br.com.elvisassis.dslist.dto.GameMinDTO;
-import br.com.elvisassis.dslist.mapprer.GameMapper;
-import br.com.elvisassis.dslist.projections.GameMinProjection;
+import br.com.elvisassis.dslist.mapprers.GameMapper;
 import jakarta.persistence.*;
 
-import java.util.List;
 import java.util.Objects;
 
 @Entity
