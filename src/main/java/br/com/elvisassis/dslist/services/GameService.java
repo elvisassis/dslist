@@ -28,7 +28,7 @@ public class GameService {
     }
 
     @Transactional(readOnly = true)
-    public List<GameMinDTO> findByList(Long listId) {
+    public List<GameMinDTO> searchByList(Long listId) {
         List<GameMinProjection> result = repository.searchByList(listId);
         return GameMapper.INSTANCE.toMinDTOProjection(result);
     }
@@ -40,5 +40,7 @@ public class GameService {
                 .map(game -> game.toMinDTO(game))
                 .toList();
     }
+
+
 
 }
